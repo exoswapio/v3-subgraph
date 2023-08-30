@@ -1,21 +1,22 @@
 specVersion: 0.0.2
-description: Uniswap is a decentralized protocol for automated token exchange on Ethereum.
-repository: https://github.com/Uniswap/uniswap-v3-subgraph
+description: Exoswap is a decentralized protocol for automated token exchange on Stratos.
+repository: https://github.com/exoswapio/v3-subgraph
 schema:
   file: ./schema.graphql
-graft:
-  base: QmPrb5mvZj3ycUugZgwLWCvK93jfXfhvfjRXrFk4tRmyCX
-  block: 14292820
+# NOTE: In case if same graph have ben dployed to reuse a data, possible not required on stratos
+# graft:
+#   base: QmPrb5mvZj3ycUugZgwLWCvK93jfXfhvfjRXrFk4tRmyCX
+#   block: 14292820
 features:
   - nonFatalErrors
 dataSources:
   - kind: ethereum/contract
     name: Factory
-    network: mainnet
+    network: mesos
     source:
-      address: '0x1F98431c8aD98523631AE4a59f267346ea31F984'
+      address: '0x13d8667701f71512e3856eb8ce566a2ed1bcabcb'
       abi: Factory
-      startBlock: 12369621
+      startBlock: 500337
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -40,11 +41,11 @@ dataSources:
           handler: handlePoolCreated
   - kind: ethereum/contract
     name: NonfungiblePositionManager
-    network: mainnet
+    network: mesos
     source:
-      address: '0xC36442b4a4522E871399CD717aBDD847Ab11FE88'
+      address: '0xdd1879c6b523c68bf37375e309c9a110ede9b740'
       abi: NonfungiblePositionManager
-      startBlock: 12369651
+      startBlock: 500345
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -74,7 +75,7 @@ dataSources:
 templates:
   - kind: ethereum/contract
     name: Pool
-    network: mainnet
+    network: mesos
     source:
       abi: Pool
     mapping:

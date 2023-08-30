@@ -1,6 +1,6 @@
-# Uniswap V3 Subgraph
+# Exoswap Subgraph (base on Uniswap V3)
 
-### Subgraph Endpoint 
+### Subgraph Endpoint
 
 Synced at: https://thegraph.com/hosted-service/subgraph/ianlapham/uniswap-v3-subgraph?selected=playground
 
